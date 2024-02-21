@@ -13,6 +13,11 @@ namespace AppSensorsHomeAssistant.Repositories
             this.context = context;
         }
 
+        public async Task<List<Sensor>> GetSensorsAsync()
+        {
+            return await this.context.Sensores.ToListAsync();
+        }
+
         public async Task<List<SensorState>> GetSensorStatesAsync()
         {
             return await this.context.SensorStates.ToListAsync();

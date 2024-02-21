@@ -12,11 +12,11 @@ namespace AppSensorsHomeAssistant.Models
         [Column("metadata_id")]
         public int IdMetaData { get; set; }
         [Column("entity_id")]
-        public string Entidad { get; set; }
+        public string Entidad { get; set; } = null!;
         [Column("state")]
-        public string Estado { get; set; }
+        public string Estado { get; set; } = null!;
         [Column("shared_attrs")]
-        public string Atributos { get; set; }
+        public string Atributos { get; set; } = null!;
 
     }
 }

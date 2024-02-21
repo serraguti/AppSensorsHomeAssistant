@@ -12,17 +12,23 @@ namespace AppSensorsHomeAssistant.Controllers
         {
             this.repo = repo;
         }
-    
+
+        public async Task<IActionResult> MisSensores()
+        {
+            List<Sensor> sensores = await this.repo.GetSensorsAsync();
+            return View(sensores);
+        }
+
         public async Task<IActionResult> Index()
         {
-            List<SensorState> sensores = await this.repo.GetSensorStatesAsync(316);
-            return View(sensores);
+            List<SensorState> sensoresStates = await this.repo.GetSensorStatesAsync();
+            return View(sensoresStates);
         }
 
         public async Task<IActionResult> SearchSensorState(int id)
         {
-            List<SensorState> sensores = await this.repo.GetSensorStatesAsync(id);
-            return View(sensores);
+            List<SensorState> sensoresStates = await this.repo.GetSensorStatesAsync(id);
+            return View(sensoresStates);
         }
     }
 }

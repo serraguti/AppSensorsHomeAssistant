@@ -8,5 +8,6 @@ namespace AppSensorsHomeAssistant.Data
         public HomeAssistantContext(DbContextOptions<HomeAssistantContext> options)
             :base(options) { }
         public DbSet<SensorState> SensorStates { get; set; }
+        public DbSet<Sensor> Sensores { get; set; }
     }
 }
